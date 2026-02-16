@@ -34,7 +34,7 @@ export default function Feedback() {
             document.removeEventListener("keydown", handleEsc)
             document.body.style.overflow = ""
         }
-    }, [closeModal])
+    }, [closeModal, isOpen])
 
     const handleNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let val = e.target.value.replace(/\D/g, "")
