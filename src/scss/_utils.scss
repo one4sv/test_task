@@ -1,0 +1,34 @@
+@use "./variables" as *;
+
+@mixin gradButton($color, $bg) {
+    position: relative;
+    padding: 12px 20px;
+    border-radius: 40px;
+    background: $gradient;
+    cursor: pointer;
+    border: none; 
+    font-weight: 500;
+    color: $color;
+    width: fit-content;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 1px;
+        border-radius: 40px;
+        pointer-events: none;
+        background: $bg;
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
+        font-weight: 500;
+        line-height: 130%;
+        font-size: 16px;
+    }
+
+    &:hover::after {
+        background: $gradient;
+    }
+}

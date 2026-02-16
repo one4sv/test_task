@@ -1,0 +1,54 @@
+@use "./global" as *;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 119px;
+}
+
+.feedbackButton {
+    @include gradButton($white, $black);
+    right: 40px;
+}
+
+.logo {
+    width: 70px;
+    height: 84px;
+    position: relative;
+    left: 40px;
+    cursor: pointer;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+}
+.header-divider {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: $white;
+    opacity: 30%;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 83px;
+    }
+    .logo {
+        height: 53px;
+        width: 44px;
+        left: 10px;
+    }
+    .feedbackButton {
+        right: 10px;
+    }
+}

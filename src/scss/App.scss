@@ -1,0 +1,12 @@
+@use "./global" as *;
+
+main {
+    margin-top: 119px;
+    background-color: $black;
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-top: 83px;
+    }
+}

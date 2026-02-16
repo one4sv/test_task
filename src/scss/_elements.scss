@@ -1,0 +1,16 @@
+@use "./variables" as *;
+
+input {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #0F0F17;
+    border-radius: 10px;
+    font-size: 16px;
+    color: $black;
+
+    &::placeholder {
+        color: #0F0F17;
+        opacity: 0.5;
+    }
+}

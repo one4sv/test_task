@@ -1,0 +1,114 @@
+@use "../../scss/global" as *;
+
+.home {
+    background-color: $black;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 60px 40px 40px;
+    box-sizing: border-box;
+}
+
+.newsList {
+    display: grid;
+    grid-template-columns: repeat(3, 440px);
+    gap: 40px 20px;
+    justify-content: center;
+    margin: 40px auto;
+}
+
+.newsCard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+    &:hover {
+        .newsCardImg {
+            border-radius: 20px;
+        }
+        .newsCardContent h2 {
+            background: $gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+
+.newsCardImg {
+    width: 440px;
+    height: 300px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.newsCardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .desc {
+        color: $white;
+        opacity: 0.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 1024px) {
+    .newsList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        padding: 40px 0px 40px;
+    }
+
+    .home h1 {
+        font-size: 24px;
+        position: relative;
+        left: 10px;
+    }
+
+    .newsList {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin: 30px auto;
+    }
+
+    .newsCardImg {
+        width: 100%;
+        height: 240px;
+    }
+
+    .newsCardContent h2 {
+        font-size: 20px;
+    }
+
+    .newsCardContent .desc,
+    .newsCardContent .date {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 320px) {
+    .home {
+        padding: 40px 10px 30px;
+    }
+
+    .home h1 {
+        font-size: 32px;
+    }
+
+    .newsCardImg {
+        height: 200px;
+    }
+}
